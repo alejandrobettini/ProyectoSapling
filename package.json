@@ -1,0 +1,23 @@
+{
+  "name": "proyectosapling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejandrobettini/ProyectoSapling.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alejandrobettini/ProyectoSapling/issues"
+  },
+  "homepage": "https://github.com/alejandrobettini/ProyectoSapling#readme",
+  "dependencies": {
+    "cucumber": "^6.0.5",
+    "selenium-webdriver": "^4.0.0-alpha.5"
+  }
+}
