@@ -25,3 +25,38 @@ Then ('/^iniciar sesion en Sapling con usuario "(.*)" y contraseña "(.*)"$/', a
     await this.driver.findElement(By.xpath(WElements.WElogin)).click();
 });
 
+Given ('hacer click en 3 items', async function () {
+
+    for (var i=0; i<=2;i++){
+        await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcheck)));
+        let WEcheck = await this.driver.findElement(By.xpath(WElements.WEcheck));
+        await WEcheck.click();
+    }
+});
+
+Then ('click en View Selected items', async function () {
+
+         await this.driver.wait(until.elementLocated(By.xpath(WElements.WEviewSelected)));
+        let WEviewSelected = await this.driver.findElement(By.xpath(WElements.WEviewSelected));
+        await WEviewSelected.click();
+});
+
+
+/////////////////////// MODELO DE VERIFICACION EN TINDER
+
+
+
+When ('envio un like', async function () {
+    this.nameLike = await this.driver.findElement(By.xpath(WElements.girlName)).getText();
+    await this.driver.wait(until.elementLocated(By.xpath(WElements.WEcorazon)));
+    let WEcorazon = await this.driver.findElement(By.xpath(WElements.WEcorazon));
+    await WEcorazon.click();
+
+});
+Then('verificar like', async function () {
+    var name2Like = await this.driver.findElement(By.xpath(WElements.girlName)).getText();
+    assert(this.nameLike!==name2Like);
+
+});
+
+
